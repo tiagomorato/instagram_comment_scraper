@@ -1,1 +1,2 @@
-# instagram_comment_scraper
+# Instagram comment scraper
+Dieser Algorithmus wurde im Rahmen der Projektarbeit entwickelt und dient der Sammlung mittels web scraping (BeautifulSoup4 und Selenium) von Kommentaren ausgewählter Beiträge, die von brasilianischen Instagram-Kanälen veröffentlicht wurden. Gespeichert wurden dieser zunächst in csv-Dateien. Im Nachhinein wurde festgestellt, dass ein anderes Format besser wäre, nämlich JSON.
