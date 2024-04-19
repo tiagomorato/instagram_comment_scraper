@@ -206,37 +206,6 @@ def open_instagram_posts(filename: str) -> list:
 
     return [line.strip() for line in lines if not line.startswith('#')]
 
-def save_comments_in_csv(data: dict, post_code: str) -> None:
-    print("Creating csv file...")
-    # Extract data
-    url = post_code
-    user = data['user']
-    date = data['date']
-    comments = data['comments']
-
-    # Create user directory if it doesn't exist
-    user_dir = Path(user)
-    user_dir.mkdir(exist_ok=True) 
-
-    # Create url directory inside user directory if it doesn't exist
-    #url_dir = user_dir / url
-    #url_dir.mkdir(exist_ok=True)
-
-    # Path to CSV file
-    csv_path = user_dir / f'{date}#{url}.csv'
-
-    # Write comments to CSV file
-    with open(csv_path, 'w', newline='') as file:
-        writer = csv.writer(file, delimiter=';')
-
-        # header
-        writer.writerow(['date', 'comment'])
-
-        # write comments
-        for comment in comments:
-            writer.writerow([comment[0], comment[1]])
-    print("Successfully created a csv file.")
-
 def save_comments_in_json(new_data: dict, filename: str='data.json') -> None:
     print("Saving to [json] file...")
     if not os.path.exists(filename):
